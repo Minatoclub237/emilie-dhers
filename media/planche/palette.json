@@ -1,0 +1,170 @@
+[
+ {
+  "f": "di-01.webp",
+  "label": "Haussmannien haut de gamme",
+  "colors": [
+   "#d6cfc8",
+   "#9b8f81",
+   "#3e3428"
+  ],
+  "parts": [
+   0.665,
+   0.197,
+   0.139
+  ]
+ },
+ {
+  "f": "di-11.webp",
+  "label": "Salon d’un appartement ancien",
+  "colors": [
+   "#dad3c8",
+   "#a99681",
+   "#67462a"
+  ],
+  "parts": [
+   0.455,
+   0.327,
+   0.219
+  ]
+ },
+ {
+  "f": "ai-10.webp",
+  "label": "Pièce de vie, appartement ancien",
+  "colors": [
+   "#c2c0c5",
+   "#9e9390",
+   "#654b3e"
+  ],
+  "parts": [
+   0.409,
+   0.37,
+   0.221
+  ]
+ },
+ {
+  "f": "renovation-complete-appartement-art-deco-sejour.webp",
+  "label": "Séjour Art Déco",
+  "colors": [
+   "#d0cfce",
+   "#a8a3a1",
+   "#524741"
+  ],
+  "parts": [
+   0.517,
+   0.282,
+   0.2
+  ]
+ },
+ {
+  "f": "ai-12.webp",
+  "label": "Salle à manger, cheminée ancienne",
+  "colors": [
+   "#686154",
+   "#28231f",
+   "#a8a59d"
+  ],
+  "parts": [
+   0.525,
+   0.332,
+   0.143
+  ]
+ },
+ {
+  "f": "di-03.webp",
+  "label": "Mobilier & luminaires design",
+  "colors": [
+   "#443832",
+   "#988981",
+   "#d4d3d2"
+  ],
+  "parts": [
+   0.385,
+   0.368,
+   0.247
+  ]
+ },
+ {
+  "f": "ai-07.webp",
+  "label": "Salle de bain, baignoire centrale",
+  "colors": [
+   "#dbdada",
+   "#2e2c28",
+   "#aaa199"
+  ],
+  "parts": [
+   0.391,
+   0.329,
+   0.28
+  ]
+ },
+ {
+  "f": "di-02.webp",
+  "label": "Verrière sur mesure",
+  "colors": [
+   "#d1cdc6",
+   "#a1968b",
+   "#57453b"
+  ],
+  "parts": [
+   0.446,
+   0.338,
+   0.216
+  ]
+ },
+ {
+  "f": "ai-11.webp",
+  "label": "Cuisine semi-ouverte",
+  "colors": [
+   "#c2c0c0",
+   "#412a23",
+   "#87766d"
+  ],
+  "parts": [
+   0.492,
+   0.325,
+   0.183
+  ]
+ },
+ {
+  "f": "rehabiliation-villa-contemporaine.webp",
+  "label": "Villa contemporaine",
+  "colors": [
+   "#948473",
+   "#c0b8b0",
+   "#3c342f"
+  ],
+  "parts": [
+   0.458,
+   0.411,
+   0.131
+  ]
+ },
+ {
+  "f": "di-04.webp",
+  "label": "Poutres apparentes",
+  "colors": [
+   "#c2bcb8",
+   "#3e3027",
+   "#8c7c69"
+  ],
+  "parts": [
+   0.536,
+   0.241,
+   0.223
+  ]
+ },
+ {
+  "f": "at-01.webp",
+  "label": "Bureaux d’entreprise",
+  "colors": [
+   "#dee0dd",
+   "#99a4ac",
+   "#474d56"
+  ],
+  "parts": [
+   0.408,
+   0.297,
+   0.294
+  ]
+ }
+]
