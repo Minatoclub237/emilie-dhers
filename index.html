@@ -3574,7 +3574,27 @@
     :root {
       --fr: 'Fraunces', Georgia, serif;
       --mm: 'Martian Mono', 'Space Mono', monospace;
+      /* Accent de titre : la seconde moitié de chaque titre change de couleur,
+         pour que l'œil trouve où couper la phrase. Deux valeurs seulement —
+         une terre cuite sur les fonds clairs, un taupe clair sur les fonds
+         sombres — reprises de la palette relevée dans les photographies. */
+      --hl: #98603A;
     }
+    .hl { color: var(--hl); }
+
+    /* Le hero et les trois volets « se projeter » passent par un découpeur qui
+       reconstruit leur contenu caractère par caractère : un <span> inséré à la
+       main y serait effacé. La seconde ligne est donc colorée par le CSS. */
+    .hero-title .line:nth-child(2) { color: var(--hl); }
+    .sol-bottom h1 { color: var(--hl); }
+
+    /* fonds sombres : #14100E, #000, #0B0A09, la vidéo du hero */
+    .realisations, .faq, #faq-stage, .mf-section, .pl-sec, .contact, .hero,
+    .solutions-overlay, .karim { --hl: #C8A47A; }
+    /* fond brun de la section devis */
+    .dv-sec { --hl: #D9BE95; }
+    /* fond crème de la section relevé */
+    .rv-sec { --hl: #8A5A32; }
 
     .nx-eyebrow {
       font-family: var(--mm);
@@ -4139,7 +4159,7 @@
       <div class="mission-grid">
         <div class="mission-left">
           <div class="mission-eyebrow rv">006 — La méthode</div>
-          <h2 class="rv d1">Quatre étapes, de la première visite à la mise en place.</h2>
+          <h2 class="rv d1">Quatre étapes, de la première visite <span class="hl">à la mise en place.</span></h2>
           <p class="mission-sub rv d2">
             La même méthode pour chaque intérieur : visite conseil, étude de décoration ou d'architecture d'intérieur, consultation et suivi des artisans, puis mise en place finale. Une seule interlocutrice du premier rendez-vous à la livraison.
           </p>
@@ -4284,7 +4304,7 @@
     <section id="reseau" class="rx" aria-labelledby="rx-title">
       <div class="rx-head">
         <span class="rx-eyebrow"><i></i>Mon réseau d'artisans</span>
-        <h2 id="rx-title">Huit corps de métier derrière une seule interlocutrice.</h2>
+        <h2 id="rx-title">Huit corps de métier derrière <span class="hl">une seule interlocutrice.</span></h2>
         <p>Des artisans de confiance — certifiés, labellisés et assurés — et un carnet d'adresses de fournisseurs et de boutiques de décoration.</p>
       </div>
 
@@ -4358,7 +4378,7 @@
       <div class="services-grid">
         <div>
           <div class="mission-eyebrow">008 — Mes deux expertises</div>
-          <h2>Décoration &amp; architecture d'intérieur.</h2>
+          <h2>Décoration <span class="hl">&amp; architecture d'intérieur.</span></h2>
           <p class="services-sub">
             De la visite conseil à la mise en place finale : harmoniser un intérieur sans travaux lourds, ou concevoir, optimiser et rénover partiellement ou complètement votre logement. Pour les propriétaires, les locataires, les futurs acquéreurs comme pour les locaux commerciaux.
           </p>
@@ -4436,7 +4456,7 @@
         <div class="rv-head">
           <div>
             <div class="nx-eyebrow">009 — Le relevé</div>
-            <h2 id="rv-t" class="nx-h2">Ce que l'œil voit sans savoir le nommer.</h2>
+            <h2 id="rv-t" class="nx-h2">Ce que l'œil voit <span class="hl">sans savoir le nommer.</span></h2>
           </div>
           <p class="rv-lede">
             Un intérieur réussi ne se remarque pas : il se ressent. Voici, annoté sur trois pièces livrées, le vocabulaire qui se cache derrière cette impression — et les couleurs exactes qui y dominent.
@@ -4455,7 +4475,7 @@
         <div class="pl-head">
           <div>
             <div class="nx-eyebrow">010 — La planche</div>
-            <h2 id="pl-t" class="nx-h2">La planche tendance se compose sous vos yeux.</h2>
+            <h2 id="pl-t" class="nx-h2">La planche tendance se compose <span class="hl">sous vos yeux.</span></h2>
           </div>
           <p class="pl-lede">
             Première étape de l'étude : rassembler. Douze intérieurs, trente-six teintes relevées dans leurs propres photographies — et la palette qui en sort, bande par bande, à la proportion exacte où chaque couleur occupe l'image.
@@ -4482,8 +4502,8 @@
             <p class="mf-statement">
               Un intérieur ne se juge pas sur sa surface,<br />
               mais sur la façon dont on y vit. J'observe l'existant,<br />
-              je dessine ce qui est possible et je vous le montre<br />
-              avant que le premier meuble ne bouge.
+              <span class="hl">je dessine ce qui est possible et je vous le montre<br />
+              avant que le premier meuble ne bouge.</span>
             </p>
 
             <div class="mf-stats">
@@ -4518,7 +4538,7 @@
       <div class="rz-head">
         <div>
           <div class="rz-eyebrow">011 — Mes études de cas</div>
-          <h2>Trois familles de lieux,<br />une même méthode.</h2>
+          <h2>Trois familles de lieux,<br /><span class="hl">une même méthode.</span></h2>
         </div>
         <p class="rz-lede">
           Planches, plans, vues 3D et photographies illustrent les étapes de la démarche, de la visite conseil jusqu'à la mise en place finale.
@@ -4592,7 +4612,7 @@
         <div class="dv-head">
           <div>
             <div class="nx-eyebrow">012 — Le devis</div>
-            <h2 id="dv-t" class="nx-h2">Votre surface écrit le devis.</h2>
+            <h2 id="dv-t" class="nx-h2">Votre surface <span class="hl">écrit le devis.</span></h2>
           </div>
           <p class="dv-lede">
             Faites défiler : la pièce se dessine, la tranche s'allume, le montant s'écrit. Aucune fourchette, aucun « à partir de » — la grille est publique et c'est celle-ci.
@@ -4669,10 +4689,10 @@
           <div class="faq-head">
             <div>
               <span class="faq-pill fade-up"><i></i>FAQ</span>
-              <h2 class="fade-up" data-d="1">Les questions qui reviennent<br />avant de se lancer.</h2>
+              <h2 class="fade-up" data-d="1">Les objections qu'on me fait<br /><span class="hl">avant de me faire confiance.</span></h2>
             </div>
             <p class="faq-lede fade-up" data-d="2">
-              Ce qu'on m'oppose le plus souvent au premier rendez-vous : la différence entre décoration et architecture d'intérieur, le coût réel d'une étude, la peur d'un chantier qui s'éternise. Voici les réponses, sans détour.
+              Douze phrases entendues telles quelles au premier rendez-vous. Je ne les ai pas adoucies pour les mettre ici, et je n'y réponds pas par des généralités : si une seule vous a traversé l'esprit, la réponse est en dessous.
             </p>
           </div>
 
@@ -4704,7 +4724,7 @@
         <div class="ct-aside">
           <div class="glass ct-head">
             <div class="ct-eyebrow">013 — Contact</div>
-            <h2>Réservez votre visite conseil.</h2>
+            <h2>Réservez votre <span class="hl">visite conseil.</span></h2>
             <p>Avant d'acheter quoi que ce soit, prenez une heure pour faire l'état des lieux. Je vous propose une étude personnalisée, des visuels pour vous projeter et un suivi jusqu'à la mise en place finale.</p>
           </div>
 
@@ -6158,62 +6178,63 @@
         if (!sec || !catsEl || !listEl) return;
 
         const CATS = [
-          { key: 'cabinet', label: 'Décoration ou architecture' },
-          { key: 'mission', label: 'Tarifs & déroulé' },
-          { key: 'chantier', label: 'Travaux & garanties' }
+          { key: 'cabinet', label: 'Pourquoi vous payer' },
+          { key: 'mission', label: 'Le prix, franchement' },
+          { key: 'chantier', label: 'Ce qui peut mal tourner' }
         ];
 
         const TEL = 'tel:+33683302584';
         const WA = 'https://wa.me/33683302584';
         const MAIL = 'mailto:interieur-design@hotmail.fr';
 
-        /* Twelve objections, not twelve polite questions — what a prospect
-           actually thinks before picking up the phone. Every answer closes on a
-           different call to action: no two entries send to the same place, so
-           the section distributes the reader across the site instead of
-           repeating "contactez-nous" twelve times. */
+        /* Douze objections, pas douze questions polies : ce qu'un prospect pense
+           vraiment avant de décrocher son téléphone, écrit à la première
+           personne et sans l'adoucir. Chaque réponse se ferme sur un appel à
+           l'action différent — aucune n'envoie au même endroit, la section
+           distribue le lecteur dans le site au lieu de répéter douze fois
+           « contactez-nous ». */
         const FAQ = {
           cabinet: [
-            { q: "Décorateur ou architecte d’intérieur : je prends lequel ?",
-              a: "Le décorateur d’intérieur transforme et optimise votre intérieur sans avoir recours à d’importants travaux : couleurs, mobilier, éclairage, organisation de l’espace. L’architecte d’intérieur intervient quand la structure bouge — conception, optimisation, rénovation partielle ou complète, redistribution des pièces. La visite conseil sert précisément à trancher : bien souvent, ce que vous cherchez ne demande pas de casser un mur.",
-              cta: { label: "Voir les quatre étapes de la méthode", href: '#mission' } },
-            { q: "Je sais déjà ce que je veux, à quoi bon un professionnel ?",
-              a: "Un regard extérieur apporte de nouvelles perspectives et indique les angles d’amélioration — plus de luminosité, plus de confort, une circulation qui tient. Il sert aussi à confirmer vos idées et à affirmer vos envies : la moitié du travail consiste à valider ce que vous pressentez déjà, l’autre à proposer ce que vous n’auriez pas envisagé.",
-              cta: { label: "Voir le détail des prestations", href: '#services' } },
-            { q: "Je suis locataire, ça vaut le coup ?",
-              a: "Oui, sous une autre forme : quand les travaux ne sont pas envisageables, la prestation devient un relooking d’intérieur ou un coaching déco. On travaille la lumière, les couleurs, les textiles et l’implantation du mobilier — rien de permanent, et tout ce qui est acheté vous suivra dans le logement suivant.",
-              cta: { label: "Voir l’accompagnement des locataires", href: '#galerie' } },
-            { q: "Et pour un local commercial, des bureaux, un restaurant ?",
-              a: "C’est proposé : la décoration de locaux commerciaux et le retail design suivent la même méthode que les logements, avec une contrainte supplémentaire — l’espace doit travailler pour votre activité. Boutiques, bureaux et restaurants demandent une identité lisible dès la porte et un parcours client cohérent.",
-              cta: { label: "Voir les projets de bureaux et commerces", href: '#realisations', bento: 'locaux' } }
+            { q: "Pinterest est gratuit. J'ai déjà trois cents images et mes idées sont faites.",
+              a: "Et elles sont probablement bonnes. Le problème n'est pas l'inspiration, c'est la traduction : une planche Pinterest ne vous dit pas si le canapé passe dans l'angle, si la circulation tient à deux devant la cuisine, si cette teinte tiendra sous une exposition nord, ni ce que l'ensemble coûtera. Trois cents images d'intérieurs qui ne sont pas le vôtre, ce n'est pas un projet — c'est un désir. Mon travail commence exactement là où le vôtre s'arrête.",
+              cta: { label: "Voir ce qu'un œil professionnel nomme sur une photo", href: '#releve' } },
+            { q: "Un décorateur, c'est pour les gens qui ont trop d'argent.",
+              a: "C'est l'inverse qui est vrai : c'est quand le budget est serré qu'une erreur se paie cher. Un canapé mal choisi, ce sont 2 000 € immobilisés dix ans dans votre salon. Une cuisine mal implantée, c'est 8 000 € et un mur à rouvrir. L'étude d'un 50 m² coûte 3 000 € HT et se décide avant les achats — donc avant les erreurs. Ceux qui ont trop d'argent, eux, peuvent se permettre de se tromper deux fois.",
+              cta: { label: "Chiffrer l'étude pour votre surface", href: '#tarif' } },
+            { q: "Vous allez m'imposer votre style, et je vivrai chez vous.",
+              a: "La première heure, je ne propose rien : j'écoute votre mode de vie et je regarde ce que vous avez déjà. Chaque espace est travaillé de manière unique, en tenant compte de vos goûts — c'est la définition même du métier, sinon je vendrais un catalogue. Et rien n'est commandé avant que les planches et les vues 3D ne soient validées par vous : vous voyez le résultat avant de le payer, pas après.",
+              cta: { label: "Voir comment se compose une planche", href: '#planche' } },
+            { q: "Vous n'êtes pas architecte. Pourquoi pas quelqu'un de plus diplômé ?",
+              a: "Trois ans d'architecture à l'École d'Architecture de Versailles, trois ans de design d'intérieur à Paris, plus de dix ans d'appartements et de maisons livrés. Ce sont deux métiers distincts : si votre projet crée de la surface et passe par un permis de construire, le recours à un architecte peut être obligatoire — dans ce cas il en faut un, et je travaille avec. Pour tout ce qui se joue à l'intérieur des murs existants, c'est mon terrain.",
+              cta: { label: "Voir mon parcours", href: '#karim' } }
           ],
           mission: [
-            { q: "Combien coûte la première visite ?",
-              a: "90 € l’heure. C’est le rendez-vous où l’on fait l’état des lieux, où j’écoute votre mode de vie et où j’expose mes premières intentions ; le devis de l’étude vous est envoyé à la suite. Cette heure est remboursée dès lors que l’étude m’est confiée — elle ne s’ajoute donc pas au budget du projet.",
-              cta: { label: "Réserver une visite conseil", href: '#contact' } },
-            { q: "Et l’étude, combien ?",
-              a: "Le tarif suit la surface : 80 €/m² jusqu’à 40 m², 60 €/m² de 41 à 80 m², 50 €/m² de 81 à 120 m², et 40 €/m² au-delà de 121 m². Ce montant couvre les planches tendance, les visuels personnalisés — plans, croquis, vues 3D —, la recherche du nouveau mobilier et l’estimation du coût des travaux. Il est annoncé avant de commencer, pas découvert en route.",
-              cta: { label: "Calculer pour votre surface", href: '#tarif' } },
-            { q: "Le suivi des artisans, c’est en supplément ?",
-              a: "Oui, et il est facturé 9 % du montant des travaux. Il couvre la mise en relation avec des artisans qualifiés, le suivi du travail, le contrôle de l’avancement et le respect des délais, l’accompagnement en enseignes spécialisées et la mise en place finale. C’est une prestation distincte : certains clients s’arrêtent à l’étude et mènent leurs artisans eux-mêmes.",
-              cta: { label: "Voir les huit corps de métier", href: '#reseau' } },
-            { q: "Je peux vous confier seulement une pièce ?",
-              a: "Oui. Une cuisine, une salle de bain, un séjour : le périmètre se fixe au premier échange et n’engage rien sur la suite. Les petites surfaces entrent tout à fait dans le cadre — et commander une étude ne vous engage pas à me confier le chantier.",
-              cta: { label: "Envoyer des photos sur WhatsApp", href: WA } }
+            { q: "3 000 € pour des plans et des jolies images. Concrètement, je paie quoi ?",
+              a: "Des planches tendance, des plans, des croquis, des vues 3D, la recherche du mobilier, et l'estimation du coût des travaux. Ce dernier point est celui qu'on sous-estime : vous entrez chez les artisans avec un budget déjà cadré, au lieu de découvrir le prix sur leur devis. Et l'heure de visite conseil vous est remboursée dès lors que l'étude m'est confiée — elle ne s'ajoute pas.",
+              cta: { label: "Voir le détail des livrables", href: '#services' } },
+            { q: "9 % des travaux, c'est un pourcentage sur une somme que je ne connais pas encore.",
+              a: "Objection juste, et voici l'ordre des choses : le montant des travaux est connu à l'étape 3, quand les devis des artisans sont sur la table et analysés. Les 9 % s'appliquent à ce montant-là, donc annoncés avant que le chantier démarre — pas découverts à la fin. Et ce suivi reste optionnel : beaucoup de clients s'arrêtent à l'étude et mènent leurs artisans eux-mêmes.",
+              cta: { label: "Voir où le suivi intervient dans la méthode", href: '#mission' } },
+            { q: "Et si je paie l'étude et que je ne fais finalement rien ?",
+              a: "C'est votre droit, et ça arrive. L'étude vous appartient : planches, plans, vues 3D, estimation. Vous pouvez la ranger deux ans et la ressortir, la faire exécuter par les artisans de votre choix, ou vous en servir pour arbitrer entre deux logements. Commander une étude ne vous engage à rien sur la suite — c'est écrit dans le devis avant que vous ne le signiez.",
+              cta: { label: "Demander à voir un exemple de livrables", href: MAIL } },
+            { q: "Les artisans vont gonfler leurs devis parce qu'un intermédiaire est dans la boucle.",
+              a: "Ils auraient tout à y perdre. Ce sont des artisans avec lesquels je travaille en récurrence : une surfacturation leur coûterait les chantiers suivants, ce qui vaut plus qu'une marge sur le vôtre. À l'inverse, les devis passent par une analyse comparée poste par poste, et le carnet d'adresses de fournisseurs permet, quand c'est possible, des remises professionnelles que vous n'obtiendriez pas seul.",
+              cta: { label: "Envoyer vos devis pour comparaison", href: WA } }
           ],
           chantier: [
-            { q: "Vous travaillez avec quels artisans ?",
-              a: "Des artisans de confiance, certifiés, labellisés et assurés : entreprise générale du bâtiment, cuisiniste, carreleur, menuisier, plombier, électricien, maçon, peintre. Leurs attestations d’assurance sont vérifiées avant qu’ils démarrent, et vous sont transmises. C’est le premier document à réclamer à quiconque prétend piloter vos travaux.",
-              cta: { label: "Demander les attestations", href: MAIL } },
-            { q: "Et si le résultat ne ressemble pas à ce que j’avais en tête ?",
-              a: "C’est exactement pour cela que les planches tendance et les vues 3D viennent avant les travaux, et non après : vous validez les volumes, les circulations et les ambiances sur des images, pas sur une description. Rien n’est commandé avant que ces visuels ne soient validés.",
-              cta: { label: "Voir les projections avant / après", href: '#galerie' } },
-            { q: "Combien de temps ça va prendre ?",
-              a: "Les deux choses qui commandent le calendrier ne se décrètent pas : la disponibilité des artisans et, quand la structure bouge, les autorisations. Un planning est arrêté avant le démarrage puis tenu à jour pendant les travaux — c’est lui qui fait foi, pas une durée moyenne annoncée pour rassurer.",
-              cta: { label: "Voir le déroulé d’un projet complet", href: '#realisations', bento: 'appartements' } },
-            { q: "Vous pouvez m’accompagner pour acheter le mobilier ?",
-              a: "Oui, c’est la dernière étape : accompagnement dans les enseignes spécialisées, réception des livraisons, puis installation du mobilier, des luminaires et des textiles. Mon carnet d’adresses de fournisseurs sert là, y compris pour les projets éco-responsables. L’intérieur se découvre fini, pas en cours d’installation.",
-              cta: { label: "Voir des intérieurs livrés", href: '#realisations', bento: 'maisons' } }
+            { q: "Vous allez disparaître au milieu du chantier.",
+              a: "Vérifiez-le avant de signer, pas après : les attestations d'assurance des entreprises retenues vous sont transmises, un planning est arrêté avant le démarrage, et le suivi se facture sur l'avancement des travaux — pas d'avance. Vous avez un seul numéro à appeler, et il décroche pendant toute la durée du chantier. C'est le premier document à réclamer à quiconque prétend piloter vos travaux : si on vous le fait attendre, c'est déjà une réponse.",
+              cta: { label: "Appeler et poser vos questions directement", href: TEL } },
+            { q: "Les délais vont exploser. C'est toujours comme ça.",
+              a: "Souvent, oui — et je ne vais pas vous promettre une durée moyenne pour vous rassurer. Deux choses commandent le calendrier et ne se décrètent pas : la disponibilité des artisans et, quand la structure bouge, les autorisations. Ce qui est tenable, c'est un planning arrêté avant le démarrage puis mis à jour pendant les travaux. C'est lui qui fait foi. Un dérapage se voit alors la semaine où il commence, pas le jour de la livraison.",
+              cta: { label: "Voir le déroulé d'un projet complet", href: '#realisations', bento: 'appartements' } },
+            { q: "Et si les planches ne me plaisent pas ? L'argent est parti.",
+              a: "Les allers-retours font partie de l'étape 2, ils ne sont pas un service après-vente. Une planche qui ne vous plaît pas n'est pas un échec, c'est une information : elle dit ce que vous ne voulez pas, et on resserre. Ce qui serait grave, c'est de découvrir le désaccord après la commande du mobilier — d'où l'ordre : planches, puis 3D, puis validation, puis achats. Jamais l'inverse.",
+              cta: { label: "Voir des intérieurs menés jusqu'à la livraison", href: '#realisations', bento: 'maisons' } },
+            { q: "Je suis locataire. Mettre de l'argent chez un propriétaire, non merci.",
+              a: "Alors ne touchez pas aux murs. Le relooking d'intérieur porte sur ce qui vous suivra : implantation du mobilier, luminaires, textiles, couleurs réversibles, rangements non fixés. Rien de permanent, rien de perdu au moment du préavis. C'est d'ailleurs la prestation que je propose le plus souvent en location — et la moins chère, puisqu'il n'y a pas de travaux à chiffrer.",
+              cta: { label: "Voir l'accompagnement des locataires", href: '#galerie' } }
           ]
         };
 
