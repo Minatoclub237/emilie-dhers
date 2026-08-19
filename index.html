@@ -809,18 +809,7 @@
 
     .mission-cta-note { font-size: 12.5px; color: #a49e93; padding-left: 6px; }
 
-    /* ─── Réseau d'experts ──────────────────────────────────────────────── */
-    .rx {
-      position: relative;
-      z-index: 40;
-      background: #ffffff;
-      color: #17140f;
-      padding: 72px 0 84px;
-      overflow: hidden;
-    }
-
-    @media (min-width: 1024px) { .rx { padding: 96px 0 110px; } }
-
+    /* ─── En-tête de section partagé (avis) ─────────────────────────────── */
     .rx-head { padding: 0 16px; margin-bottom: 40px; text-align: center; }
     @media (min-width: 1024px) { .rx-head { padding: 0 56px; margin-bottom: 52px; } }
 
@@ -845,6 +834,7 @@
 
     .rx-head h2 {
       font-family: 'Bricolage Grotesque', sans-serif;
+      color: #17140f;
       font-weight: 700;
       font-size: clamp(26px, 4.4vw, 44px);
       line-height: 1.06;
@@ -858,104 +848,6 @@
       color: #6f6a61;
       max-width: 46ch;
       margin: 0 auto;
-    }
-
-    /* Two rails running in opposite directions. Each track holds the list twice,
-       so translating it by exactly -50% lands on an identical frame — the loop
-       has no seam and never needs to jump back. */
-    .rx-rail {
-      position: relative;
-      overflow: hidden;
-      padding: 7px 0;
-      -webkit-mask-image: linear-gradient(to right, transparent, #000 9%, #000 91%, transparent);
-      mask-image: linear-gradient(to right, transparent, #000 9%, #000 91%, transparent);
-    }
-
-    .rx-track {
-      display: flex;
-      gap: 14px;
-      width: max-content;
-      will-change: transform;
-      animation: rxSlide 46s linear infinite;
-    }
-
-    .rx-rail.rev .rx-track { animation-direction: reverse; animation-duration: 54s; }
-
-    @keyframes rxSlide {
-      from { transform: translate3d(0, 0, 0); }
-      to { transform: translate3d(-50%, 0, 0); }
-    }
-
-    .rx:hover .rx-track { animation-play-state: paused; }
-
-    .rx-item {
-      --rx: #1D6E6B;
-      flex: 0 0 auto;
-      display: flex;
-      align-items: center;
-      gap: 13px;
-      padding: 15px 24px 15px 17px;
-      border-radius: 16px;
-      background: color-mix(in srgb, var(--rx) 7%, #fff);
-      border: 1px solid color-mix(in srgb, var(--rx) 20%, #fff);
-      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, background 0.35s ease;
-    }
-
-    .rx-item:hover {
-      transform: translateY(-3px);
-      background: color-mix(in srgb, var(--rx) 12%, #fff);
-      box-shadow: 0 12px 28px color-mix(in srgb, var(--rx) 18%, transparent);
-    }
-
-    .rx-ico {
-      flex: 0 0 auto;
-      width: 44px;
-      height: 44px;
-      display: grid;
-      place-items: center;
-      border-radius: 13px;
-      background: #fff;
-      box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--rx) 22%, #fff);
-    }
-
-    .rx-ico svg {
-      width: 24px;
-      height: 24px;
-      stroke: var(--rx);
-      fill: none;
-      stroke-width: 1.6;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-    }
-
-    .rx-name {
-      font-size: 15px;
-      font-weight: 600;
-      letter-spacing: -0.01em;
-      white-space: nowrap;
-      color: #221d16;
-    }
-
-    @media (max-width: 640px) {
-      .rx-item { padding: 12px 19px 12px 13px; gap: 11px; }
-      .rx-ico { width: 38px; height: 38px; border-radius: 11px; }
-      .rx-ico svg { width: 21px; height: 21px; }
-      .rx-name { font-size: 14px; }
-    }
-
-    .rx .sr-only {
-      position: absolute;
-      width: 1px;
-      height: 1px;
-      overflow: hidden;
-      clip: rect(0 0 0 0);
-      clip-path: inset(50%);
-      white-space: nowrap;
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      .rx-track { animation: none; }
-      .rx-rail { -webkit-mask-image: none; mask-image: none; overflow-x: auto; }
     }
 
     /* ─── Karim (007) ───────────────────────────────────────────────────── */
@@ -1498,7 +1390,7 @@
        track travels exactly half its width */
     .tm-track {
       display: flex;
-      align-items: flex-start;
+      align-items: stretch;
       gap: 26px;
       width: max-content;
       will-change: transform;
@@ -1512,65 +1404,56 @@
 
     .tm:hover .tm-track { animation-play-state: paused; }
 
+    /* Carte d'avis au format Google : la marque en haut à gauche, l'ancienneté
+       à droite, le texte tronqué à sept lignes et la date de visite calée en
+       pied. Hauteur fixe — sinon des textes de longueurs très différentes
+       donnent une frise en dents de scie une fois en mouvement. */
     .tm-card {
       flex: 0 0 auto;
       width: 268px;
+      height: 244px;
       background: #fff;
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 10px 26px rgba(24, 20, 16, 0.09);
+      border: 1px solid #ebe7e1;
+      border-radius: 12px;
+      box-shadow: 0 10px 26px rgba(24, 20, 16, 0.07);
       display: flex;
       flex-direction: column;
+      padding: 18px 18px 16px;
     }
 
-    .tm-band {
-      height: 62px;
-      background: #F2A165;
-      position: relative;
+    .tm-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
     }
 
-    .tm-av {
-      position: absolute;
-      left: 50%;
-      bottom: -24px;
-      transform: translateX(-50%);
-      width: 56px;
-      height: 56px;
-      border-radius: 999px;
-      border: 4px solid #fff;
-      display: grid;
-      place-items: center;
-      font-family: 'Inter Tight', sans-serif;
-      font-weight: 600;
-      font-size: 20px;
-      color: #fff;
-      letter-spacing: 0.01em;
-    }
+    .tm-g { width: 19px; height: 19px; flex: 0 0 auto; }
 
-    .tm-body { padding: 40px 20px 22px; text-align: center; }
-
-    .tm-name {
-      font-weight: 700;
-      font-size: 13.5px;
-      color: #2a251f;
-      letter-spacing: 0.01em;
+    .tm-when {
+      font-size: 11.5px;
+      color: #a49e93;
+      white-space: nowrap;
     }
 
     .tm-text {
-      margin-top: 10px;
+      margin: 13px 0 0;
       font-size: 12.5px;
-      line-height: 1.5;
+      line-height: 1.55;
       color: #4a443c;
+      display: -webkit-box;
+      -webkit-line-clamp: 7;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
     }
 
-    .tm-stars {
-      display: flex;
-      justify-content: center;
-      gap: 3px;
-      margin-top: 18px;
+    .tm-visit {
+      margin-top: auto;
+      padding-top: 13px;
+      border-top: 1px solid #f1eee9;
+      font-size: 11px;
+      color: #a49e93;
     }
-
-    .tm-stars svg { width: 21px; height: 21px; fill: #FDC63A; }
 
     .tm-foot { display: flex; justify-content: center; margin-top: 40px; padding: 0 16px; }
 
@@ -1593,7 +1476,7 @@
     .tm-cta .tm-cta-go { fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; width: 15px; height: 15px; }
 
     @media (max-width: 640px) {
-      .tm-card { width: 232px; }
+      .tm-card { width: 232px; height: 252px; }
       .tm-track { gap: 18px; }
     }
 
@@ -4301,15 +4184,24 @@
       </div>
     </section>
 
-    <section id="reseau" class="rx" aria-labelledby="rx-title">
+    <!-- Avis Google, repris mot pour mot depuis la fiche du studio. Les cartes
+         sont construites par avis() ; le rail défile en boucle sans couture
+         (la liste est présente deux fois, la piste se translate de -50 %). -->
+    <section id="avis" class="tm" aria-labelledby="tm-title">
       <div class="rx-head">
-        <span class="rx-eyebrow"><i></i>Mon réseau d'artisans</span>
-        <h2 id="rx-title">Huit corps de métier derrière <span class="hl">une seule interlocutrice.</span></h2>
-        <p>Des artisans de confiance — certifiés, labellisés et assurés — et un carnet d'adresses de fournisseurs et de boutiques de décoration.</p>
+        <span class="rx-eyebrow"><i></i>Avis Google</span>
+        <h2 id="tm-title">Ce qu'en disent <span class="hl">celles et ceux qui l'ont fait venir.</span></h2>
+        <p>Publiés sur la fiche Google du studio, repris ici mot pour mot.</p>
       </div>
 
-      <div class="rx-rail"><div class="rx-track" id="rx-a"></div></div>
-      <div class="rx-rail rev"><div class="rx-track" id="rx-b"></div></div>
+      <div class="tm-rail"><div class="tm-track" id="tm-track"></div></div>
+
+      <div class="tm-foot">
+        <a class="tm-cta" href="https://maps.app.goo.gl/VvxD4WubPPVJve4H6" target="_blank" rel="noopener">
+          Lire tous les avis sur Google
+          <svg class="tm-cta-go" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" /></svg>
+        </a>
+      </div>
     </section>
 
     <section id="karim" class="karim">
@@ -6014,32 +5906,60 @@
         const track = document.getElementById('tm-track');
         if (!track) return;
 
-        /* Google reviews, verbatim. Only the ones Google showed in full are
-           here — the truncated ones ("…Plus") would land on the card cut
-           mid-sentence. */
-        /* Témoignages à renseigner avec les vrais avis du studio. Tant que le
-           tableau est vide, la section « avis » reste retirée du HTML. */
+        /* Avis Google du studio, repris mot pour mot — y compris les « … » de
+           fin, qui marquent l'endroit où Google tronque le texte : les couper
+           ailleurs donnerait une phrase que personne n'a écrite.
+           `q` = ancienneté affichée par Google, `v` = date de visite (absente
+           sur certains avis, la ligne n'est alors pas rendue).
+           Les noms des auteurs ne sont pas renseignés : tant qu'ils manquent,
+           la carte s'en tient à la marque Google et aux dates. */
         const AVIS = [
+          {
+            q: 'il y a un an',
+            t: 'Nous recommandons vivement Emilie Dhers ! Nous avons fait appel à elle pour l’agencement de notre pièce de vie et les deux chambres de nos enfants. …',
+            v: 'Visité en octobre 2024'
+          },
+          {
+            q: 'il y a 2 ans',
+            t: 'J’ai eu le plaisir de travailler avec Mme Emilie Dhers « après avoir acheté mon nouveau chez moi en 2021 » pour redécorer mon espace de vie, et je ne pourrais pas être plus ravie du résultat final. Sa créativité et son sens du détail ont …',
+            v: 'Visité en avril 2021'
+          },
+          {
+            q: 'il y a 2 ans',
+            t: 'Madame Emilie Dhers nous a accompagnés pour la rénovation de l’appartement dont nous venions de faire l’acquisition. Ne sachant pas comment l’agencer, l’aménager et le décorer, nous avons fait …',
+            v: 'Visité en octobre 2023'
+          },
+          {
+            q: 'il y a 2 ans',
+            t: 'J’ai fait appel à Émilie @interieur_design, pour un projet qui me tenait à cœur. J’ai été agréablement surpris par le professionnalisme et la force de …',
+            v: 'Visité en novembre 2023'
+          },
+          {
+            q: 'il y a 2 ans',
+            t: 'Très à l’écoute, c’était un plaisir de travailler avec elle pour notre projet. Positif : réactivité, ponctualité, qualité, professionnalisme, prix. Services : conception de chambres, sélection de décoration d’intérieur, aménagement des pièces.',
+            v: ''
+          }
         ];
 
-        const TINTS = ['#4CAF7D', '#14615A', '#2F6FA8', '#C2643C', '#7A4FA3', '#B08A22', '#2E9E93', '#5B7A2E'];
-        const star = '<svg viewBox="0 0 24 24"><path d="m12 2.6 2.95 5.98 6.6.96-4.78 4.65 1.13 6.57L12 17.66l-5.9 3.1 1.13-6.57L2.45 9.54l6.6-.96z"/></svg>';
         const esc = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 
-        function card(a, i) {
+        /* Le G de Google, à quatre couleurs — c'est la marque qui atteste la
+           provenance de l'avis, elle ne se redessine pas en monochrome. */
+        const G =
+          '<svg class="tm-g" viewBox="0 0 48 48" aria-hidden="true">' +
+            '<path fill="#4285F4" d="M45.1 24.5c0-1.6-.1-2.8-.4-4H24v7.3h12.1c-.2 2-1.6 5-4.5 7l-.1.3 6.5 5 .5.1c4.1-3.8 6.6-9.4 6.6-15.7"/>' +
+            '<path fill="#34A853" d="M24 46c5.9 0 10.9-2 14.5-5.3l-6.9-5.4c-1.9 1.3-4.4 2.2-7.6 2.2-5.8 0-10.7-3.8-12.5-9.1l-.3.1-6.8 5.2-.1.3C7.9 41.1 15.4 46 24 46"/>' +
+            '<path fill="#FBBC05" d="M11.5 28.4c-.5-1.4-.7-2.9-.7-4.4s.3-3 .7-4.4v-.3l-6.9-5.4-.2.1A22 22 0 0 0 2 24c0 3.5.9 6.9 2.4 9.9z"/>' +
+            '<path fill="#EA4335" d="M24 10.2c4.1 0 6.9 1.8 8.5 3.3l6.2-6C34.9 4 29.9 2 24 2 15.4 2 7.9 6.9 4.4 14.1l7.1 5.5c1.8-5.3 6.7-9.4 12.5-9.4"/>' +
+          '</svg>';
+
+        function card(a) {
           const el = document.createElement('article');
           el.className = 'tm-card';
           el.innerHTML =
-            '<div class="tm-band">' +
-              '<span class="tm-av" style="background:' + TINTS[i % TINTS.length] + '" aria-hidden="true">' +
-                esc(a.n.charAt(0).toUpperCase()) +
-              '</span>' +
-            '</div>' +
-            '<div class="tm-body">' +
-              '<div class="tm-name">' + esc(a.n) + '</div>' +
-              '<p class="tm-text">' + esc(a.t) + '</p>' +
-              '<div class="tm-stars" role="img" aria-label="5 étoiles sur 5">' + star.repeat(5) + '</div>' +
-            '</div>';
+            '<div class="tm-top">' + G + '<span class="tm-when">' + esc(a.q) + '</span></div>' +
+            '<p class="tm-text">' + esc(a.t) + '</p>' +
+            (a.v ? '<div class="tm-visit">' + esc(a.v) + '</div>' : '');
           return el;
         }
 
@@ -6102,74 +6022,6 @@
       })();
 
       // ─── Réseau d'experts ─────────────────────────────────────────────────
-      (function reseau() {
-        const railA = document.getElementById('rx-a');
-        const railB = document.getElementById('rx-b');
-        if (!railA || !railB) return;
-
-        // Icons redrawn from scratch — geometric, single-weight strokes, one
-        // accent colour per métier so the two rails read as a spectrum.
-        const EXPERTS = [
-          { n: 'Peintres', c: '#1D6E6B', p: '<path d="M3.6 11 12 3.8l8.4 7.2"/><path d="M5.6 12.4V20h12.8v-7.6"/><path d="M14.6 13.4 9.4 18.6"/><circle cx="10" cy="14" r="1.15"/><circle cx="14" cy="18" r="1.15"/>' },
-          { n: 'Électriciens', c: '#3FAE5F', p: '<path d="M12 3.2 19 6v5.6c0 4.1-2.9 7.3-7 9.2-4.1-1.9-7-5.1-7-9.2V6z"/><path d="M8.4 13.2 10.8 10.6l2.1 1.9 3-3.4"/>' },
-          { n: 'Plombiers', c: '#2F6FA8', p: '<circle cx="12" cy="4.8" r="1.5"/><path d="M11.4 6.2 7.6 19.6"/><path d="M12.6 6.2 16.4 19.6"/><path d="M9.1 15.2a6.4 6.4 0 0 0 5.8 0"/>' },
-          { n: 'Menuisiers', c: '#C2643C', p: '<rect x="3.4" y="4.6" width="10.4" height="4.6" rx="1.2"/><path d="M13.8 6.9h3.6a1.2 1.2 0 0 1 1.2 1.2v2.6a1.2 1.2 0 0 1-1.2 1.2H11v2.2"/><rect x="9.4" y="13.9" width="3.2" height="6.1" rx="1"/>' },
-          { n: 'Cuisinistes', c: '#B08A22', p: '<rect x="3.6" y="3.6" width="16.8" height="16.8" rx="3.2"/><circle cx="9" cy="9" r="1.9"/><circle cx="15" cy="9" r="1.9"/><circle cx="9" cy="15" r="1.9"/><circle cx="15" cy="15" r="1.9"/>' },
-          { n: 'Carreleurs', c: '#7A4FA3', p: '<path d="M15.9 4.1a4.3 4.3 0 0 0-5.6 5.6L3.9 16.1V20h3.9l6.4-6.4a4.3 4.3 0 0 0 5.6-5.6l-2.7 2.7-2.5-.6-.6-2.5z"/>' },
-          { n: 'Maçons', c: '#2E9E93', p: '<rect x="3" y="5" width="18" height="5"/><rect x="3" y="10" width="18" height="5"/><rect x="3" y="15" width="18" height="4"/><path d="M9 5v5M15 10v5M9 15v4"/>' },
-          { n: 'Entreprise générale du bâtiment', c: '#4A5FA8', p: '<path d="M3.5 10.5 12 4l8.5 6.5"/><path d="M5.5 12v8h13v-8"/><path d="M10 20v-5h4v5"/>' }
-        ];
-
-        function card(e) {
-          const li = document.createElement('div');
-          li.className = 'rx-item';
-          li.style.setProperty('--rx', e.c);
-          li.setAttribute('aria-hidden', 'true');
-          li.innerHTML =
-            '<span class="rx-ico"><svg viewBox="0 0 24 24">' + e.p + '</svg></span>' +
-            '<span class="rx-name">' + e.n + '</span>';
-          return li;
-        }
-
-        // The keyframe slides the track by exactly -50%, so the second half has
-        // to be a pixel-perfect copy of the first — and the half has to be wider
-        // than the screen, or the loop shows the void behind it.
-        function fill(track, list) {
-          track.innerHTML = '';
-          let half = document.createDocumentFragment();
-          list.forEach(e => half.appendChild(card(e)));
-          track.appendChild(half.cloneNode(true));
-          while (track.scrollWidth < window.innerWidth + 200) {
-            list.forEach(e => track.appendChild(card(e)));
-          }
-          const first = Array.prototype.map.call(track.children, n => n.cloneNode(true));
-          first.forEach(n => track.appendChild(n));
-        }
-
-        // second rail starts mid-list so the two lines never show the same
-        // métier side by side
-        const shifted = EXPERTS.slice(5).concat(EXPERTS.slice(0, 5)).reverse();
-
-        function build() {
-          fill(railA, EXPERTS);
-          fill(railB, shifted);
-        }
-
-        build();
-
-        let t = null;
-        window.addEventListener('resize', () => {
-          clearTimeout(t);
-          t = setTimeout(build, 220);
-        }, { passive: true });
-
-        // one accessible copy of the list, since the rails themselves are decorative
-        const sr = document.createElement('p');
-        sr.className = 'sr-only';
-        sr.textContent = 'Mon réseau : ' + EXPERTS.map(e => e.n).join(', ') + '.';
-        document.getElementById('reseau').appendChild(sr);
-      })();
-
       // ─── FAQ (010) ────────────────────────────────────────────────────────
       (function faq() {
         const sec = document.getElementById('faq');
