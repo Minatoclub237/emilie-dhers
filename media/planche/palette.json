@@ -14,45 +14,17 @@
   ]
  },
  {
-  "f": "di-11.webp",
-  "label": "Salon d’un appartement ancien",
+  "f": "cuisine-ouverte-ilot-suspension-doree.webp",
+  "label": "Cuisine ouverte, îlot central",
   "colors": [
-   "#dad3c8",
-   "#a99681",
-   "#67462a"
+   "#b5af9c",
+   "#8b7756",
+   "#533e22"
   ],
   "parts": [
-   0.455,
-   0.327,
-   0.219
-  ]
- },
- {
-  "f": "ai-10.webp",
-  "label": "Pièce de vie, appartement ancien",
-  "colors": [
-   "#c2c0c5",
-   "#9e9390",
-   "#654b3e"
-  ],
-  "parts": [
-   0.409,
-   0.37,
-   0.221
-  ]
- },
- {
-  "f": "renovation-complete-appartement-art-deco-sejour.webp",
-  "label": "Séjour Art Déco",
-  "colors": [
-   "#d0cfce",
-   "#a8a3a1",
-   "#524741"
-  ],
-  "parts": [
-   0.517,
-   0.282,
-   0.2
+   0.436,
+   0.286,
+   0.278
   ]
  },
  {
@@ -70,17 +42,17 @@
   ]
  },
  {
-  "f": "di-03.webp",
-  "label": "Mobilier & luminaires design",
+  "f": "cuisine-verriere-vue-toits-paris.webp",
+  "label": "Cuisine derrière une verrière",
   "colors": [
-   "#443832",
-   "#988981",
-   "#d4d3d2"
+   "#88857b",
+   "#b2b8b3",
+   "#232e3e"
   ],
   "parts": [
-   0.385,
-   0.368,
-   0.247
+   0.511,
+   0.332,
+   0.156
   ]
  },
  {
@@ -98,6 +70,20 @@
   ]
  },
  {
+  "f": "chambre-tete-de-lit-vert-sur-mesure.webp",
+  "label": "Tête de lit sur mesure",
+  "colors": [
+   "#b1a58e",
+   "#755f3c",
+   "#1e221d"
+  ],
+  "parts": [
+   0.632,
+   0.216,
+   0.153
+  ]
+ },
+ {
   "f": "di-02.webp",
   "label": "Verrière sur mesure",
   "colors": [
@@ -112,17 +98,17 @@
   ]
  },
  {
-  "f": "ai-11.webp",
-  "label": "Cuisine semi-ouverte",
+  "f": "bibliotheque-sur-mesure-chene-blanc.webp",
+  "label": "Bibliothèque chêne & laque",
   "colors": [
-   "#c2c0c0",
-   "#412a23",
-   "#87766d"
+   "#96805e",
+   "#533513",
+   "#c5c6bd"
   ],
   "parts": [
-   0.492,
-   0.325,
-   0.183
+   0.576,
+   0.257,
+   0.167
   ]
  },
  {
@@ -140,17 +126,17 @@
   ]
  },
  {
-  "f": "di-04.webp",
-  "label": "Poutres apparentes",
+  "f": "couloir-panoramique-pins-bibliotheque.webp",
+  "label": "Couloir, papier panoramique",
   "colors": [
-   "#c2bcb8",
-   "#3e3027",
-   "#8c7c69"
+   "#dcd9d6",
+   "#3f4041",
+   "#a79f99"
   ],
   "parts": [
-   0.536,
-   0.241,
-   0.223
+   0.412,
+   0.345,
+   0.244
   ]
  },
  {
@@ -165,6 +151,20 @@
    0.408,
    0.297,
    0.294
+  ]
+ },
+ {
+  "f": "bureau-sur-mesure-banquette-verte.webp",
+  "label": "Bureau & banquette de fenêtre",
+  "colors": [
+   "#8e7c61",
+   "#3e3220",
+   "#c2b598"
+  ],
+  "parts": [
+   0.433,
+   0.334,
+   0.233
   ]
  }
 ]
